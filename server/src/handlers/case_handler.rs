@@ -1,4 +1,6 @@
-use rocket::{http::Status, response::status::Custom, serde::json::Json};
+use std::sync::Arc;
+
+use rocket::{futures::SinkExt, http::Status, response::status::Custom, serde::json::Json};
 use ws::Message;
 
 use crate::{
@@ -17,13 +19,14 @@ pub async fn broadcast_handler(
     msg: Json<String>,
     state: ConnectionManagerGuard<'_>,
 ) -> Custom<Json<String>> {
-    let mut manager = state.0.lock().await;
-    let connections: Vec<_> = manager.connections.keys().cloned().collect();
+    let conn_manager = state.0;
+    let manager = conn_manager.lock().await;
+    let connections: Vec<_> = manager.connections.lock().await.keys().cloned().collect();
 
     for id in connections {
-        info!("Broadcasting to {:?}", id);
-        manager
-            .send_message(&id, Message::from(msg.to_string()))
+        info!("Broadcasting {:?} to {:?}", msg.to_string(), id);
+        let _res = manager
+            .send_message(id, Message::from(msg.to_string()))
             .await;
     }
 

@@ -14,3 +14,4 @@ ws = { package = "rocket_ws", version = "0.1.0" }
 serde = "1.0.197"
 tracing-subscriber = "0.3.18"
 tokio = "1.36.0"
+anyhow = "1.0.80"
