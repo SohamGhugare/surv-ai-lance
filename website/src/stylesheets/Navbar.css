@@ -1,4 +1,6 @@
 .navbarParent {
+    position: fixed;
+    width: 100%;
     display: flex;
     justify-content: center;
 }
@@ -8,11 +10,13 @@
     width: 80%;
     gap: 5px;
     margin: 40px;
-    padding: 10px;
+    padding: 5px 20px;
     justify-content: flex-end;
     align-items: center;
-    border: 1px solid white;
     border-radius: 25px;
+}
+.active {
+    background-color: rgba(255, 255, 255, 0.3);
 }
 .Logo {
     margin-right: auto;
@@ -22,11 +26,8 @@
     color: var(--accentColor1);
 }
 .navbarContents {
-    padding: 20px;
     font-family: var(--regularFontBold);
+    padding: 0px 10px;
 }
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-  }
+
+
