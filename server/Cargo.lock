@@ -1191,6 +1191,7 @@ dependencies = [
  "rocket",
  "rocket_ws",
  "serde",
+ "tokio",
  "tracing-subscriber",
 ]
 
