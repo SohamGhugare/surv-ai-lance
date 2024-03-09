@@ -1,4 +1,5 @@
-use handlers::{case_handler::new_case_handler, ws_handler::echo_channel};
+use handlers::case_handler::new_case_handler;
+use websockets::handler::websocket_channel;
 
 #[macro_use]
 extern crate rocket;
@@ -6,6 +7,7 @@ extern crate rocket;
 // modules
 mod handlers;
 mod models;
+mod websockets;
 
 #[rocket::main]
 async fn main() -> Result<(), rocket::Error> {
@@ -17,7 +19,7 @@ async fn main() -> Result<(), rocket::Error> {
 
     let rocket = rocket::build()
         // <------ ROUTES ------->
-        .mount("/", routes![echo_channel])
+        .mount("/", routes![websocket_channel])
         .mount("/case", routes![new_case_handler]);
 
     rocket.launch().await?;
