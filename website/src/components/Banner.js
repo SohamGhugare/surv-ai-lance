@@ -1,8 +1,11 @@
 import React from 'react'
 
+import "../stylesheets/Banner.css"
 const Banner = () => {
   return (
-    <div>Banner</div>
+    <div className='parent'>
+        
+    </div>
   )
 }
 

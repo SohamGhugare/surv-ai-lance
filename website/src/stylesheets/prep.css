@@ -15,3 +15,9 @@
     --regularFontBold: OutfitBold;
 
 }
+
+.gradientText {
+    background: -webkit-linear-gradient(#e042ff,rgb(255, 58, 222));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

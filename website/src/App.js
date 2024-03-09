@@ -1,11 +1,10 @@
-import { React } from 'react';
-
 import React from 'react'
+import Homepags from './routes/Homepags'
 
 const App = () => {
   return (
     <div>
-      
+      <Homepags />
     </div>
   )
 }
