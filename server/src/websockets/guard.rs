@@ -3,7 +3,6 @@ use rocket::{
     Request,
 };
 use std::sync::Arc;
-
 use tokio::sync::Mutex as TokioMutex;
 
 use super::manager::ConnectionManager;

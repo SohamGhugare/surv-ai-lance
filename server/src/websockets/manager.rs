@@ -1,8 +1,7 @@
 use std::{collections::HashMap, sync::Arc};
 
-use tokio::sync::Mutex as TokioMutex;
-
 use rocket::futures::SinkExt;
+use tokio::sync::Mutex as TokioMutex;
 
 pub struct ConnectionManager {
     pub connections: Arc<TokioMutex<HashMap<String, ws::stream::DuplexStream>>>,
