@@ -1,7 +1,10 @@
+use handlers::case_handler::new_case_handler;
+
 #[macro_use]
 extern crate rocket;
 
 // modules
+mod handlers;
 mod models;
 
 #[rocket::main]
@@ -14,7 +17,7 @@ async fn main() -> Result<(), rocket::Error> {
 
     let rocket = rocket::build()
         // <------ ROUTES ------->
-        .mount("/", routes![]);
+        .mount("/case", routes![new_case_handler]);
 
     rocket.launch().await?;
 
