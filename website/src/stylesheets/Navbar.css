@@ -1,0 +1,32 @@
+.navbarParent {
+    display: flex;
+    justify-content: center;
+}
+.navbarContainer {
+    display: flex;
+    height:8vh;
+    width: 80%;
+    gap: 5px;
+    margin: 40px;
+    padding: 10px;
+    justify-content: flex-end;
+    align-items: center;
+    border: 1px solid white;
+    border-radius: 25px;
+}
+.Logo {
+    margin-right: auto;
+    font-family: var(--styledFontBold);
+}
+.Coloured {
+    color: var(--accentColor1);
+}
+.navbarContents {
+    padding: 20px;
+    font-family: var(--regularFontBold);
+}
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
