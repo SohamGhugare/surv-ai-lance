@@ -1,17 +1,22 @@
-import { React, useEffect } from 'react'
-import "../stylesheets/InfoSec.css"
+import React from 'react'
+import "../stylesheets/prep.css"
+import '../stylesheets/InfoSec.css'
 
-const InfoSec = ( props ) => {
 
-  useEffect(() => {
-    if (props.content.reversed) document.querySelector(".infoSecContainer").style.flexDirection = "row-reverse"
-  }, [])
+const InfoSec = ( { content, color } ) => {
+
   return (
     <div className='infoSecContainer'>
-        <img className='infoSecImage' src={props.content.img} />
-        <div className='infoSecTextContainer'>
-          <p className='infoSecHeading'>{props.content.title} <span className='gradientText'>{props.content.headingGradient}</span></p>
-          <p className='infoSecText'>{props.content.text}</p>
+      <div className='infoSecHeaderContainer'>
+        <div className='infoSecHeaderIconContainer'>
+            <span className='infoSecHeaderIcon'>{(content.Icon !== "") ? <content.icon className="infoSecIcon"/> : ""}</span></div>
+        <div className='infoSecLine visibleLine' style={{background: `linear-gradient(transparent, ${color}, transparent)`, boxShadow: `0 0 10px #000000, 0 0 20px #000000, 0 0 32px ${color}, 0 0 52px ${color}`}}></div>
+      </div>
+        
+        <div className='infoSecBody'>
+          <p className='infoSecTitle' style={{color: color}}>{content.title}</p>
+          <p className='infoSecHeading' style={{color: color}}>{content.heading}</p>
+          <p className='infoSecBodyText'>{content.text}</p>
         </div>
     </div>
   )
