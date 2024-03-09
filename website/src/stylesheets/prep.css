@@ -14,8 +14,10 @@
 * {
     margin: 0;  
     padding: 0;
-    background-color: var(--primaryColor);
     color: var(--secondaryColor);
+}
+body {
+    background-color: var(--primaryColor);
 }
 
 .coloredText {
