@@ -1,5 +1,5 @@
 use handlers::case_handler::new_case_handler;
-use websockets::handler::websocket_channel;
+use websockets::{handler::websocket_channel, manager::ConnectionManager};
 
 #[macro_use]
 extern crate rocket;
@@ -17,10 +17,15 @@ async fn main() -> Result<(), rocket::Error> {
     // loading env file
     dotenv::dotenv().ok();
 
+    // managing states
+    let connection_manager = ConnectionManager::init().await;
+
     let rocket = rocket::build()
         // <------ ROUTES ------->
         .mount("/", routes![websocket_channel])
-        .mount("/case", routes![new_case_handler]);
+        .mount("/case", routes![new_case_handler])
+        // <------ STATES ------->
+        .manage(connection_manager);
 
     rocket.launch().await?;
 
