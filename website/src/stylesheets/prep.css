@@ -5,5 +5,13 @@
 
 :root {
     --primaryColor: #00031C;
-    --secondaryColor
+    --secondaryColor: #ffffff;
+    --accentColor1 : #C91C50;
+    --accentColor2: #1BB3A7;
+    --accentColor3: #ECAA29;
+    --styledFont: PlayfairDisplay;
+    --styledFontBold: PlayfairDisplayBold;
+    --regularFont: Outfit;
+    --regularFontBold: OutfitBold;
+
 }
