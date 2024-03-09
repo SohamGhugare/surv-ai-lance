@@ -1,9 +1,11 @@
+use handlers::blockchain_handler::new_block_handler;
 use models::blockchain::Blockchain;
 
 #[macro_use]
 extern crate rocket;
 
 // modules
+mod handlers;
 mod models;
 mod utils;
 
@@ -23,7 +25,7 @@ async fn main() -> Result<(), rocket::Error> {
 
     let rocket = rocket::build()
         // <------ ROUTES ------->
-        .mount("/", routes![])
+        .mount("/", routes![new_block_handler])
         // <------ STATES ------->
         .manage(blockchain);
 

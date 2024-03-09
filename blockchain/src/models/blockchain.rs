@@ -8,13 +8,18 @@ pub struct Blockchain {
     pub chain: Vec<Block>,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Block {
     pub index: u64,
     pub hash: String,
     pub prev_hash: String,
     pub data: String,
     pub timestamp: i64,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct CreateBlock {
+    pub data: String,
 }
 
 impl Block {
@@ -48,13 +53,16 @@ impl Blockchain {
         self.chain.push(genesis_block);
     }
 
-    pub fn try_add_block(&mut self, block: Block) {
-        let latest_block = self.chain.last().expect("no blocks found");
+    pub fn try_add_block(&self, block: Block) -> Blockchain {
+        let mut new_chain = self.chain.clone();
+        let latest_block = new_chain.last().expect("no blocks found");
         if self.is_block_valid(&block, latest_block) {
-            self.chain.push(block);
+            new_chain.push(block);
         } else {
             error!("could not add block - invalid");
         }
+
+        Blockchain { chain: new_chain }
     }
 
     fn is_block_valid(&self, block: &Block, prev_block: &Block) -> bool {

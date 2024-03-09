@@ -1,0 +1,17 @@
+[default]
+address = "0.0.0.0"
+port = 8050
+workers = 8
+max_blocking = 512
+keep_alive = 5
+ident = "Rocket"
+ip_header = "X-Real-IP"
+log_level = "normal"
+temp_dir = "/tmp"
+cli_colors = true
+secret = "x8XCiRW3PAWc1PzKiLjSLVN3PlS/OU+W5EqzL5/jU+c="
+
+[default.limits]
+form = "10 MiB"
+data-form = "10 MiB"
+file = "10 MiB"
