@@ -6,7 +6,7 @@ use crate::responses::upload_res::{UploadResponse, UploadResponseWithStatus};
 
 #[get("/<id>")]
 pub async fn serve(id: &str) -> Result<NamedFile, Custom<Json<UploadResponseWithStatus>>> {
-    let fp = format!("./temp/{}.avi", id);
+    let fp = format!("./temp/{}.mp4", id);
 
     match NamedFile::open(fp).await {
         Ok(file) => Ok(file),
