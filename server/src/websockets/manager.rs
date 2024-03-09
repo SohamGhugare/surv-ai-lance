@@ -1,12 +1,11 @@
-use std::{
-    collections::HashMap,
-    sync::{Arc, Mutex},
-};
+use std::{collections::HashMap, sync::Arc};
+
+use tokio::sync::Mutex as TokioMutex;
 
 use rocket::futures::SinkExt;
 
 pub struct ConnectionManager {
-    connections: HashMap<String, Arc<Mutex<ws::stream::DuplexStream>>>,
+    connections: HashMap<String, Arc<TokioMutex<ws::stream::DuplexStream>>>,
 }
 
 impl ConnectionManager {
@@ -18,7 +17,11 @@ impl ConnectionManager {
     }
 
     // adding a new connection
-    pub async fn add_connection(&mut self, id: String, connection: Arc<Mutex<ws::stream::DuplexStream>>>) {
+    pub async fn add_connection(
+        &mut self,
+        id: String,
+        connection: Arc<TokioMutex<ws::stream::DuplexStream>>,
+    ) {
         self.connections.insert(id.clone(), connection);
         info!("Added connection with id {:?}", id);
     }
@@ -32,7 +35,7 @@ impl ConnectionManager {
     // sending a message to connection
     pub async fn send_message(&mut self, id: &str, message: ws::Message) {
         if let Some(connection) = self.connections.get_mut(id) {
-            let _ = connection.lock().unwrap().send(message);
+            let _ = connection.lock().await.send(message);
         }
     }
 }
