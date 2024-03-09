@@ -17,7 +17,55 @@
 }
 
 .gradientText {
-    background: -webkit-linear-gradient(#e042ff,rgb(255, 58, 222));
+    background-image: linear-gradient(to right, blue, red, );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+@font-face {
+    font-family: "PlayfairDisplay";
+    src: url('../assets/fonts/PlayfairDisplay-Regular.ttf');
+}
+
+@font-face {
+    font-family: "PlayfairDisplayBold";
+    src: url('../assets/fonts/PlayfairDisplay-Bold.ttf');
+}
+
+
+@font-face {
+    font-family: "Outfit";
+    src: url('../assets/fonts/Outfit-Regular.ttf');
+}
+
+@font-face {
+    font-family: "OutfitBold";
+    src: url('../assets/fonts/Outfit-Bold.ttf');
+}
+
+.underline {
+	display: inline-block;
+	position: relative;
+	transition: all 0.5s cubic-bezier(.55, 0, .1, 1);
+    
+}
+
+.underline:after {
+	content: '';
+    transform: scaleX(0);
+	position: absolute;
+	display: block;
+	width: 120%;
+	height: 3px;
+	/* box-shadow: 0 1px rgba(255,255,255,0.6); */
+
+    margin-left: -0.36em;
+	background: var(--accentColor);
+	transform-origin: center left;
+	animation: strikethrough 1s 0.5s cubic-bezier(.55, 0, .1, 1) 1;
+	transition: transform 0.5s cubic-bezier(.55, 0, .1, 1);
+}
+.underline:hover:after {
+	transform: scaleX(1);
+	transform-origin: center right;
 }
