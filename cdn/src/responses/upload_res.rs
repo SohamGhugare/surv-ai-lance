@@ -9,6 +9,19 @@ pub struct UploadResponse {
     pub url: String,
 }
 
+impl UploadResponse {
+    pub fn new(id: String) -> Self {
+        UploadResponse {
+            id: id.clone(),
+            url: format!(
+                "{}/{}",
+                env::var("BASE_URL").expect("no base url found"),
+                id
+            ),
+        }
+    }
+}
+
 // status response
 #[derive(Serialize, Deserialize)]
 pub struct UploadResponseWithStatus {
