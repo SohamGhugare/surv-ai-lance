@@ -1,3 +1,5 @@
+use std::env;
+
 use serde::{Deserialize, Serialize};
 
 // upload response
@@ -12,4 +14,21 @@ pub struct UploadResponse {
 pub struct UploadResponseWithStatus {
     pub status_code: u16,
     pub response: UploadResponse,
+}
+
+impl UploadResponseWithStatus {
+    // success response
+    pub fn success(id: String) -> Self {
+        UploadResponseWithStatus {
+            status_code: 200,
+            response: UploadResponse {
+                id: id.clone(),
+                url: format!(
+                    "{}/{}",
+                    env::var("BASE_URL").expect("no base url found"),
+                    id
+                ),
+            },
+        }
+    }
 }
