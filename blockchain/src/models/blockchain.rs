@@ -1,6 +1,8 @@
 use chrono::Utc;
 use serde::{Deserialize, Serialize};
 
+use crate::utils::hash;
+
 #[derive(Debug, Deserialize)]
 pub struct Blockchain {
     pub chain: Vec<Block>,
@@ -15,8 +17,23 @@ pub struct Block {
     pub timestamp: i64,
 }
 
+impl Block {
+    pub fn new(index: u64, prev_hash: String, data: String) -> Self {
+        let timestamp = Utc::now().timestamp();
+        let hash = hash::calculate_hash(index, timestamp, &prev_hash, &data);
+        Block {
+            index,
+            hash,
+            prev_hash,
+            data,
+            timestamp,
+        }
+    }
+}
+
 impl Blockchain {
     pub fn init() -> Self {
+        info!("Initializing Blockchain...");
         Blockchain { chain: vec![] }
     }
 
