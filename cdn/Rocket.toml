@@ -10,3 +10,8 @@ log_level = "normal"
 temp_dir = "/tmp"
 cli_colors = true
 secret = "x8XCiRW3PAWc1PzKiLjSLVN3PlS/OU+W5EqzL5/jU+c="
+
+[default.limits]
+form = "10 MiB"
+data-form = "10 MiB"
+file = "10 MiB"

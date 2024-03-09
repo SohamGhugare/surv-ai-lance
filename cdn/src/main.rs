@@ -1,4 +1,4 @@
-use handlers::upload_handler::upload;
+use handlers::{serve_handler::serve, upload_handler::upload};
 
 #[macro_use]
 extern crate rocket;
@@ -19,7 +19,7 @@ async fn main() -> Result<(), rocket::Error> {
 
     let rocket = rocket::build()
         // <------ ROUTES ------->
-        .mount("/", routes![upload]);
+        .mount("/", routes![upload, serve]);
 
     rocket.launch().await?;
 
