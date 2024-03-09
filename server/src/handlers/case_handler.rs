@@ -1,6 +1,4 @@
-use std::sync::Arc;
-
-use rocket::{futures::SinkExt, http::Status, response::status::Custom, serde::json::Json};
+use rocket::{http::Status, response::status::Custom, serde::json::Json};
 use ws::Message;
 
 use crate::{
@@ -8,12 +6,14 @@ use crate::{
     websockets::guard::ConnectionManagerGuard,
 };
 
+// new case handler for creating structured format
 #[post("/new", format = "json", data = "<case>")]
 pub async fn new_case_handler(case: Json<CreateCase>) -> Custom<Json<Case>> {
     let case = Case::new(case.into_inner());
     Custom(Status::Ok, Json(case))
 }
 
+// broadcast route for broadcasting cases
 #[post("/broadcast", format = "json", data = "<msg>")]
 pub async fn broadcast_handler(
     msg: Json<String>,

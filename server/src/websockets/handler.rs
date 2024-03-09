@@ -2,11 +2,10 @@ use std::sync::Arc;
 
 use super::guard::ConnectionManagerGuard;
 
+// websocket channel for recieving connections
 #[get("/ws")]
 pub fn websocket_channel(ws: ws::WebSocket, state: ConnectionManagerGuard) -> ws::Channel<'_> {
     use rocket::futures::StreamExt;
-
-    // let connection_manager = state.inner();
 
     ws.channel(move |mut stream| {
         Box::pin(async move {
