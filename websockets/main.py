@@ -1,10 +1,11 @@
 from websocket import create_connection
 
 print("Connecting...")
-ws = create_connection("ws://0.0.0.0:8000/echo")
+ws = create_connection("ws://0.0.0.0:8000/ws")
 print("Connection Successful!")
 
-ws.send("2173627")
+id_ = input("Enter ID: ")
+ws.send(id_)
 while True:
     i = input()
     if i == "exit":

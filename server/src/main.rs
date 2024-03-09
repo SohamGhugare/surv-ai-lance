@@ -1,3 +1,6 @@
+use std::sync::Arc;
+use tokio::sync::Mutex as TokioMutex;
+
 use handlers::case_handler::new_case_handler;
 use websockets::{handler::websocket_channel, manager::ConnectionManager};
 
@@ -18,7 +21,7 @@ async fn main() -> Result<(), rocket::Error> {
     dotenv::dotenv().ok();
 
     // managing states
-    let connection_manager = ConnectionManager::init().await;
+    let connection_manager = Arc::new(TokioMutex::new(ConnectionManager::init().await));
 
     let rocket = rocket::build()
         // <------ ROUTES ------->
