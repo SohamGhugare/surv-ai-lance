@@ -1,5 +1,5 @@
 :root {
-    --primaryColor: rgb(19, 19, 19);
+    --primaryColor: #00031C;
     --secondaryColor: #ffffff;
     --accentColor1 : #C91C50;
     --accentColor2: #1BB3A7;
@@ -14,8 +14,11 @@
 * {
     margin: 0;  
     padding: 0;
-    background-color: var(--primaryColor);
     color: var(--secondaryColor);
+}
+
+body {
+    background-color: var(--primaryColor);
 }
 
 .coloredText {
@@ -157,7 +160,7 @@
 
 @keyframes fadeInLeft {
     from {
-        transform: translateX(25%);
+        transform: translateX(5%);
         opacity: 0;
     }
 
