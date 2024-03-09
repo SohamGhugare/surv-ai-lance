@@ -1,6 +1,9 @@
 #[macro_use]
 extern crate rocket;
 
+// modules
+mod models;
+
 #[rocket::main]
 async fn main() -> Result<(), rocket::Error> {
     // setting up logger
