@@ -1,4 +1,4 @@
-use handlers::case_handler::new_case_handler;
+use handlers::{case_handler::new_case_handler, ws_handler::echo_channel};
 
 #[macro_use]
 extern crate rocket;
@@ -17,6 +17,7 @@ async fn main() -> Result<(), rocket::Error> {
 
     let rocket = rocket::build()
         // <------ ROUTES ------->
+        .mount("/", routes![echo_channel])
         .mount("/case", routes![new_case_handler]);
 
     rocket.launch().await?;
