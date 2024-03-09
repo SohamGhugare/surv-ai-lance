@@ -138,6 +138,7 @@ dependencies = [
  "dotenv",
  "rocket",
  "rocket_cors",
+ "serde",
  "tracing-subscriber",
 ]
 
