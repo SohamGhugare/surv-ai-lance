@@ -14,3 +14,7 @@
     flex-direction: column;
     align-items: left;
 }
+
+.bannerTitle {
+    color: var(--accentColor1);
+}

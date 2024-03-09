@@ -6,7 +6,7 @@ const Banner = () => {
     <div className='bannerParent'>
         <div className='bannerTextContainer'>
             <p className='bannerTitle'>
-                Surv-<span className='gradientText'>AI</span>-Lance
+                Surv-<span className=''>AI</span>-Lance
             </p>
         </div>
     </div>
