@@ -1,5 +1,3 @@
-use std::path::Path;
-
 use rocket::{form::Form, http::Status, response::status::Custom, serde::json::Json};
 
 use crate::{
