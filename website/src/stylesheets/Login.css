@@ -1,0 +1,34 @@
+.loginContainer {
+    display: flex;
+    flex-wrap: wrap;
+    height:100vh;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0px 60px;
+}
+.left {
+    font-family: var(--styledFontBold);
+    font-size: 1.5rem;
+}
+.right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:25px;
+}
+.inputContainer input {
+    height: 30px;
+    width: 500px;
+    padding: 10px;
+}
+.forgot-password {
+    align-self: flex-start;
+}
+.submit {
+    height: 30px;
+    width: 500px;
+    background-color: #8B002A;
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;    
+}

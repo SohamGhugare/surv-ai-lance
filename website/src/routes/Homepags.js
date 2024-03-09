@@ -1,9 +1,9 @@
 import React from 'react'
 import "../stylesheets/prep.css"
+import Login from "../components/Login"
 import Banner from '../components/Banner'
 import InfoSec from '../components/InfoSec'
 import Navbar from '../components/Navbar'
-import { useScroll } from '@react-three/drei'
 const Homepags = () => {
 
     const text = [
@@ -22,14 +22,20 @@ const Homepags = () => {
           if ( entry.isIntersecting ) infoSectionObserver.unobserve(entry.target)
         })
       }, { threshold: 0.4 })
+return (
+  <div>
+    <Login />
+  </div>
+)
+}
 
-
-  return (
+/*  return (
     <div>
+        <Navbar />
         <Banner />
         <InfoSec content={text}/>
     </div>
   )
-}
+}*/
 
 export default Homepags

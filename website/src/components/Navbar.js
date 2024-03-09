@@ -7,7 +7,7 @@ const Navbar = () => {
   const [navbarContainer, setNavbar] = useState(false);
   useEffect(() => {
     const changeBackground = () => {
-      if (window.scrollY >= 25)
+      if (window.scrollY >= 5)
       {
         setNavbar(true);
       }
