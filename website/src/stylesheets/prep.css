@@ -1,5 +1,5 @@
 :root {
-    --primaryColor: rgb(19, 19, 19);
+    --primaryColor: #00031C;
     --secondaryColor: #ffffff;
     --accentColor1 : #C91C50;
     --accentColor2: #1BB3A7;
@@ -16,6 +16,10 @@
     padding: 0;
     color: var(--secondaryColor);
 }
+body {
+    background-color: var(--primaryColor);
+}
+
 body {
     background-color: var(--primaryColor);
 }
@@ -159,7 +163,7 @@ body {
 
 @keyframes fadeInLeft {
     from {
-        transform: translateX(25%);
+        transform: translateX(5%);
         opacity: 0;
     }
 
