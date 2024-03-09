@@ -5,6 +5,7 @@ extern crate rocket;
 
 // modules
 mod models;
+mod utils;
 
 #[rocket::main]
 async fn main() -> Result<(), rocket::Error> {
