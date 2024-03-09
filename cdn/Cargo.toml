@@ -7,7 +7,7 @@ edition = "2021"
 
 [dependencies]
 dotenv = "0.15.0"
-rocket = "0.5.0"
+rocket = { version = "0.5.0", features = ["json"] }
 rocket_cors = "0.6.0"
 serde = "1.0.197"
 tracing-subscriber = "0.3.18"
