@@ -1,7 +1,7 @@
 use std::sync::Arc;
 use tokio::sync::Mutex as TokioMutex;
 
-use handlers::case_handler::new_case_handler;
+use handlers::case_handler::{broadcast_handler, new_case_handler};
 use websockets::{handler::websocket_channel, manager::ConnectionManager};
 
 #[macro_use]
@@ -25,7 +25,7 @@ async fn main() -> Result<(), rocket::Error> {
 
     let rocket = rocket::build()
         // <------ ROUTES ------->
-        .mount("/", routes![websocket_channel])
+        .mount("/", routes![websocket_channel, broadcast_handler])
         .mount("/case", routes![new_case_handler])
         // <------ STATES ------->
         .manage(connection_manager);
