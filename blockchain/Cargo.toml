@@ -9,6 +9,7 @@ edition = "2021"
 chrono = { version = "0.4.35", features = ["serde"] }
 dotenv = "0.15.0"
 hex = "0.4.3"
+mongodb = "2.8.1"
 rocket = { version = "0.5.0", features = ["json"] }
 serde = "1.0.197"
 serde_json = "1.0.114"
