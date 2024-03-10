@@ -14,7 +14,7 @@ const InfoSec = ( { content, color } ) => {
       </div>
         
         <div className='infoSecBody'>
-          <p className='infoSecTitle' style={{color: color}}>{content.title}</p>
+          <p className='infoSecTitle'>{content.title}</p>
           <p className='infoSecHeading' style={{color: color}}>{content.heading}</p>
           <p className='infoSecBodyText'>{content.text}</p>
         </div>

@@ -27,12 +27,13 @@ body {
 }
 
 .gradientText {
-    background: -webkit-linear-gradient(left, red , yellow);
-    background: -o-linear-gradient(right, red, yellow);
-    background: -moz-linear-gradient(right, red, yellow);
-    background: linear-gradient(to right, red , yellow); 
+    background: -webkit-linear-gradient(left, var(--accentColor1) ,var(--accentColor2)w);
+    background: -o-linear-gradient(right, var(--accentColor1), var(--accentColor2));
+    background: -moz-linear-gradient(right, var(--accentColor1), var(--accentColor2));
+    background: linear-gradient(to right, var(--accentColor1) , var(--accentColor2));
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
+   transition: all 0.2s ease-in-out;
 }
 
 

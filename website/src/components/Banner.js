@@ -3,6 +3,7 @@ import { Canvas, useFrame } from "@react-three/fiber"
 import { ScrollControls, Sky, useScroll, useGLTF, Stage } from "@react-three/drei"
 import img from "../assets/images/a.png"
 import "../stylesheets/Banner.css"
+import ThreeModel from "./ThreeModel"
 
 const Banner = () => {
 
@@ -21,7 +22,7 @@ const Banner = () => {
             </p>
         </div>
         <div className='canvas fadeLeftAnimation'>
-
+<ThreeModel />
         </div>
     
     </div>

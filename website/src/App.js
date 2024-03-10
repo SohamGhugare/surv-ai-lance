@@ -1,10 +1,10 @@
 import React from 'react'
-import Homepags from './routes/Homepags'
-
+import Homepage from './routes/Homepage'
+import Actions from './routes/Actions.js'
 const App = () => {
   return (
     <div>
-      <Homepags />
+      <Actions />
     </div>
   )
 }
