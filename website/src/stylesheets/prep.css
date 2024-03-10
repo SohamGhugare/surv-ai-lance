@@ -16,6 +16,9 @@
     padding: 0;
     color: var(--secondaryColor);
 }
+body {
+    background-color: var(--primaryColor);
+}
 
 body {
     background-color: var(--primaryColor);
