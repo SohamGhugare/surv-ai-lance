@@ -20,7 +20,7 @@ impl Display for BroadcastRequest {
     fn fmt(&self, f: &mut Formatter) -> fmt::Result {
         write!(
             f,
-            "{\"id\": {}, \"camera_id\": {}, \"footage_url\": {}, \"camera_location\": {:?}, \"timestamp\": {}}",
+            "{{\"id\": {}, \"camera_id\": {}, \"footage_url\": \"{}\", \"camera_location\": \"{:?}\", \"timestamp\": \"{}\"}}",
             self.id, self.camera_id, self.footage_url, self.camera_location, self.timestamp
         )
     }
