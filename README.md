@@ -1,4 +1,4 @@
-# Surv-AI-Lance - A project by Team Omnisense
+# Surv-AI-Lance - A project by Team Omniscience
 
 ## Components
 
