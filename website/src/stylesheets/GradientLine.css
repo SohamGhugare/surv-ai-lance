@@ -1,0 +1,6 @@
+.line {
+    width: 20px;
+    height: 100%;
+    transform: scaleY(1);
+    background: linear-gradient(var(--accentColor1), var(--accentColor2));
+}

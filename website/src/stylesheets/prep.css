@@ -1,9 +1,187 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
 :root {
     --primaryColor: #00031C;
-    --secondaryColor
+    --secondaryColor: #ffffff;
+    --accentColor1 : #C91C50;
+    --accentColor2: #1BB3A7;
+    --accentColor3: #ECAA29;
+    --styledFont: PlayfairDisplay;
+    --styledFontBold: PlayfairDisplayBold;
+    --regularFont: Outfit;
+    --regularFontBold: OutfitBold;
+
+}
+
+* {
+    margin: 0;  
+    padding: 0;
+    color: var(--secondaryColor);
+}
+body {
+    background-color: var(--primaryColor);
+}
+
+body {
+    background-color: var(--primaryColor);
+}
+
+.coloredText {
+    
+    color: var(--accentColor1);
+}
+
+.gradientText {
+    background: -webkit-linear-gradient(left, var(--accentColor1) ,var(--accentColor2)w);
+    background: -o-linear-gradient(right, var(--accentColor1), var(--accentColor2));
+    background: -moz-linear-gradient(right, var(--accentColor1), var(--accentColor2));
+    background: linear-gradient(to right, var(--accentColor1) , var(--accentColor2));
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   transition: all 0.2s ease-in-out;
+}
+
+
+@font-face {
+    font-family: "PlayfairDisplay";
+    src: url('../assets/fonts/PlayfairDisplay-Regular.ttf');
+}
+
+@font-face {
+    font-family: "PlayfairDisplayBold";
+    src: url('../assets/fonts/PlayfairDisplay-Bold.ttf');
+}
+
+
+@font-face {
+    font-family: "Outfit";
+    src: url('../assets/fonts/Outfit-Regular.ttf');
+}
+
+@font-face {
+    font-family: "OutfitBold";
+    src: url('../assets/fonts/Outfit-Bold.ttf');
+}
+
+.underline {
+	display: inline-block;
+	position: relative;
+	transition: all 0.5s cubic-bezier(.55, 0, .1, 1);
+    
+}
+
+.underline:after {
+	content: '';
+    transform: scaleX(0);
+	position: absolute;
+	display: block;
+	width: 120%;
+	height: 3px;
+	/* box-shadow: 0 1px rgba(255,255,255,0.6); */
+
+    margin-left: -0.36em;
+	background: var(--accentColor1);
+	transform-origin: center left;
+	animation: strikethrough 1s 0.5s cubic-bezier(.55, 0, .1, 1) 1;
+	transition: transform 0.5s cubic-bezier(.55, 0, .1, 1);
+}
+.underline:hover:after {
+	transform: scaleX(1);
+	transform-origin: center right;
+}
+
+.animatedUnderline {
+	display: inline-block;
+	position: relative;
+	transition: all 0.5s cubic-bezier(.55, 0, .1, 1);
+    
+}
+
+.animatedUnderline:after {
+	content: '';
+	position: absolute;
+	display: block;
+	width: 110%;
+	height: 0.6vh;
+	/* box-shadow: 0 1px rgba(255,255,255,0.6); */
+
+    margin-left: -0.2em;
+	background: linear-gradient(to right, var(--accentColor1), var(--accentColor2));
+	transform-origin: center left;
+    animation: underlineAnimation 1s cubic-bezier(.55, 0, .1, 1) forwards;
+	transition: transform 0.5s ;
+}
+
+
+
+.animatedUnderline:hover:after {
+	transform: scaleX(1);
+	transform-origin: center right;
+}
+
+.fadeUpAnimation {
+    animation: fadeInUp 1s cubic-bezier(.55, 0, .1, 1) forwards;
+}
+.fadeInAnimation {
+    animation: fadeIn 1s cubic-bezier(.55, 0, .1, 1) forwards;
+}
+.fadeLeftAnimation {
+    animation: fadeInLeft 1s cubic-bezier(.55, 0, .1, 1) forwards;
+}
+.fadeRightAnimation {
+    animation: fadeInRight 1s cubic-bezier(.55, 0, .1, 1) forwards;
+}
+
+@keyframes underlineAnimation {
+    from {
+        transform: scaleX(0);
+    }
+
+     to {
+        transform: scaleX(1);
+     }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(60%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        transform: translateX(5%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        transform: translateX(-25%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0%);
+        opacity: 1;
+    }
 }

@@ -1,0 +1,50 @@
+.bannerParent {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-basis: 0;
+    flex-grow: 0;
+    flex-shrink: 0;
+    background: inherit;
+    justify-content: space-around;
+}
+
+.bannerTextContainer {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    margin-left: 6vw;
+}
+
+.bannerTitle {
+    font-family: var(--styledFontBold);
+    font-size: 14vh;
+    opacity: 0;
+    animation-delay: 0.2s;
+}
+
+.bannerSubTitle {
+    font-family: var(--styledFont);
+    font-size: 4vh;
+    width: 22.4vw;
+    opacity: 0;
+    animation-delay: 0.5s;
+}
+
+.bannerText {
+    font-size: 4vh;
+    font-family: var(--regularFont);
+    margin-top: 4vh;
+    animation-delay: 1.4s;
+    opacity: 0;
+}
+
+.canvas {
+    width: 40%;
+    opacity: 0;
+    animation-delay: 2s;
+}

@@ -1,0 +1,27 @@
+.threeSectionContainer {
+    width: 100%;
+    height: 100vh;
+}
+.threeSectionTextContainer {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.threeSectionTitle {
+    font-family: var(--styledFontBold);
+    font-size: 10vh;
+    word-spacing: 1vw;
+    text-align: center;
+}
+
+.threeSectionText {
+    font-family: var(--regularFont);
+    font-size: 5vh;
+    text-align: center;
+    margin-top: 5vh;
+    width: 75%;
+    align-self: center;
+}
