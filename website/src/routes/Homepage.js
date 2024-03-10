@@ -1,8 +1,8 @@
 import { React, useEffect } from 'react'
 import "../stylesheets/prep.css"
+import Navbar from '../components/Navbar'
 import Banner from '../components/Banner'
 import InfoSec from '../components/InfoSec'
-import Navbar from '../components/Navbar'
 import { useScroll } from '@react-three/drei'
 import SensorsIcon from '@mui/icons-material/Sensors';
 import DevicesIcon from '@mui/icons-material/Devices';
@@ -47,6 +47,7 @@ const Homepage = () => {
     const threeObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             entry.target.querySelector(".threeSectionWord").classList.toggle("animatedUnderline", entry.isIntersecting)
+            entry.target.querySelector(".threeTextWord").classList.toggle("glowNeon", entry.isIntersecting)
             if (entry.isIntersecting) threeObserver.unobserve(entry.target)
         })
     }, { threshold: 0.5 })
@@ -70,6 +71,7 @@ const Homepage = () => {
   return (
 
     <div>
+        <Navbar />
         <Banner />
         <InfoSec content={{icon: "none"}} color={"#1ff3A7"}/>
         <InfoSec content={data[0]} color={"#1BB3A7"}/>

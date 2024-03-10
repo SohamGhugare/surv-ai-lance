@@ -4,20 +4,26 @@
     display: flex;
     justify-content: center;
     transition: all 0.1s ease-in-out;
+    z-index: 10000000;
+    background: rgba(63, 63, 63, 0.23);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.1px);
+    -webkit-backdrop-filter: blur(8.1px);
+    border: 1px solid rgba(63, 63, 63, 0.3);
+
 }
 .navbarContainer {
     display: flex;
-    height:8vh;
-    width: 80%;
-    gap: 5px;
-    margin: 40px;
+    height: 12vh;
+    width: 100%;
     padding: 5px 20px;
     justify-content: flex-end;
     align-items: center;
     border-radius: 25px;
+    /* From https://css.glass */
+
 }
 .active {
-    background-color: rgba(255, 255, 255, 0.3);
 }
 .Logo {
     margin-right: auto;

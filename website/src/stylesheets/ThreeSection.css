@@ -25,3 +25,16 @@
     width: 75%;
     align-self: center;
 }
+
+.glowNeon {
+    animation: glow 1s linear forwards;
+}
+
+@keyframes glow{
+    from {
+        text-shadow: none;
+    }
+to {
+        text-shadow: 0 0 20px #000, 0 0 30px var(--accentColor1), 0 0 42px var(--accentColor1), 0 0 54px var(--accentColor1), 0 0 68px var(--accentColor2), 0 0 74px var(--accentColor1), 0 0 98px var(--accentColor1);
+    }
+}

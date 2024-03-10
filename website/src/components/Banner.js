@@ -22,7 +22,6 @@ const Banner = () => {
             </p>
         </div>
         <div className='canvas fadeLeftAnimation'>
-<ThreeModel />
         </div>
     
     </div>

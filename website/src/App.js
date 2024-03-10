@@ -4,7 +4,7 @@ import Actions from './routes/Actions.js'
 const App = () => {
   return (
     <div>
-      <Actions />
+      <Homepage />
     </div>
   )
 }
