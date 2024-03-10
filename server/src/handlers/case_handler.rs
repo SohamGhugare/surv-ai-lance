@@ -2,7 +2,10 @@ use rocket::{http::Status, response::status::Custom, serde::json::Json};
 use ws::Message;
 
 use crate::{
-    models::case::{Case, CreateCase},
+    models::{
+        case::{Case, CreateCase},
+        request::BroadcastRequest,
+    },
     websockets::guard::ConnectionManagerGuard,
 };
 
@@ -16,7 +19,7 @@ pub async fn new_case_handler(case: Json<CreateCase>) -> Custom<Json<Case>> {
 // broadcast route for broadcasting cases
 #[post("/broadcast", format = "json", data = "<msg>")]
 pub async fn broadcast_handler(
-    msg: Json<String>,
+    msg: Json<BroadcastRequest>,
     state: ConnectionManagerGuard<'_>,
 ) -> Custom<Json<String>> {
     let conn_manager = state.0;
