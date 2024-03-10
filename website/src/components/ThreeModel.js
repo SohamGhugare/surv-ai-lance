@@ -1,6 +1,6 @@
 import { React, useEffect, useLayoutEffect, Suspense, useState } from 'react'
 import { Canvas } from "@react-three/fiber"
-import { PresentationControls , useGLTF , Stage } from "@react-three/drei"
+import { PresentationControls , useGLTF , Stage, OrbitControls } from "@react-three/drei"
 
 import { easing } from 'maath'
 
@@ -13,9 +13,11 @@ export default function App() {
     return (
         <Canvas dpr={[1,2]} camera={{fov:45}} style={{height:"100%",width:"100%"}}>
             <PresentationControls speed={1} zoom={1} polar={[-2 , Math.PI / 2]}>
+                <OrbitControls autoRotate />
                 <Stage scale={1} environment={"apartment"}>
                     <ModelRen scale={0.2}/>
                 </Stage>
+
             </PresentationControls>
         </Canvas>
         )
